@@ -1,5 +1,7 @@
 {
   "Level": 1,
+  "Invested_attribute_points": 0,
+  "Invested_skill_points": 0,
   "Attributes": {
     "Strength": 1,
     "Endurance": 1,
@@ -45,6 +47,6 @@
     "Cooking Bonus": 0.1,
     "Handcrafting Bonus": 0.1,
     "Lifesteal": 0,
-    "Movement Speed Multiplie": 120
+    "Movement Speed Multiplier": 120
   }
 }
