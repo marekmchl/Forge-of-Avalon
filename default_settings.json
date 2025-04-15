@@ -1,0 +1,16 @@
+{
+  "colors": {
+    "window_bg": "#222222",
+    "section_bg": "#444444",
+    "line_bg": "#666666",
+    "line_fg": "#ffffff"
+  },
+  "sizes": {
+    "window_height": 1800,
+    "window_width": 1200,
+    "window_padding": 9,
+    "section_padding": 9,
+    "line_padding": 9,
+    "font_size": 11
+  }
+}

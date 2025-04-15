@@ -1,0 +1,4 @@
+current_settings.json
+current_build.json
+src/__pycache__/
+.ropeproject/

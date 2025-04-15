@@ -1,5 +1,7 @@
+from settings import settings
+
 def main():
-    print("Hello world!")
+    print(settings)
 
 if __name__ == "__main__":
     main()
