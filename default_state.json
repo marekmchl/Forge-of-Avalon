@@ -1,0 +1,50 @@
+{
+  "Level": 1,
+  "Attributes": {
+    "Strength": 1,
+    "Endurance": 1,
+    "Dexterity": 1,
+    "Spirituality": 1,
+    "Perception": 1,
+    "Practicality": 1
+  },
+  "Equipment": {
+    "Helmet": null,
+    "Cuirass": null,
+    "Greaves": null,
+    "Boots": null,
+    "Gauntlets": null,
+    "Ring 1": null,
+    "Ring 2": null,
+    "Amulet": null,
+    "Back": null
+  },
+  "Statistics": {
+    "Health": 48,
+    "Mana": 36,
+    "Stamina": 43,
+    "Encumbrance Limit": 110,
+    "Armor": 0,
+    "Armor Weight Multiplier": 0,
+    "Mana Regeneration/s": 2.16,
+    "Stamina Regeneration/s": 41.4,
+    "Critical Chance": 1,
+    "Magic Critical Chance": 1,
+    "Ranged Critical Chance": 1,
+    "Critical Damage": 140,
+    "Weak Spot Damage": 105,
+    "Melee Damage": 81,
+    "Ranged Damage": 83,
+    "Spell Damage": 82,
+    "Attack Speed": 125,
+    "Sneak Damage": 108,
+    "Noise": 97,
+    "Price of bought goods": 100,
+    "Price of sold goods": 10,
+    "Alchemy Bonus": 0.1,
+    "Cooking Bonus": 0.1,
+    "Handcrafting Bonus": 0.1,
+    "Lifesteal": 0,
+    "Movement Speed Multiplie": 120
+  }
+}
