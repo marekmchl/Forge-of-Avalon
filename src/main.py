@@ -22,7 +22,7 @@ def main():
     equipment.pack(expand = True, fill = BOTH, side = BOTTOM, padx = settings["sizes"]["section_padding"], pady = settings["sizes"]["section_padding"])
 
     middle = get_statistics(win)
-    middle.grid(row = 0, column = 1, padx = settings["sizes"]["window_padding"], pady = settings["sizes"]["window_padding"])
+    middle.grid(row = 0, column = 1, pady = settings["sizes"]["window_padding"])
 
     right = Frame(win, bg = settings["colors"]["section_bg"])
     right.grid(row = 0, column = 2, padx = settings["sizes"]["window_padding"], pady = settings["sizes"]["window_padding"])

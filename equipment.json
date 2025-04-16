@@ -1,34 +1,95 @@
 {
   "Helmet": {
     "Piece": ["Naked", "Placeholder Helmet 1"],
-    "Effects": [{}, {}]
+    "Effects": {
+      "Naked": {},
+      "Placeholder Helmet 1": {
+        "Health": 10,
+        "Mana": -10,
+        "Stamina": 10,
+        "Encumbrance Limit": -10
+      }
+    }
   },
   "Amulet": {
     "Piece": ["Naked", "Placeholder Amulet 1"],
-    "Effects": [{}, {}]
+    "Effects": {
+      "Naked": {},
+      "Placeholder Amulet 1": {
+        "Armor": 10,
+        "Armor Weight Multiplier": -10
+      }
+    }
   },
   "Cuirass": {
     "Piece": ["Naked", "Placeholder Cuirass 1"],
-    "Effects": [{}, {}]
+    "Effects": {
+      "Naked": {},
+      "Placeholder Cuirass 1": {
+        "Mana Regeneration/s": 10,
+        "Stamina Regeneration/s": -10
+      }
+    }
   },
   "Back": {
     "Piece": ["Naked", "Placeholder Back 1"],
-    "Effects": [{}, {}]
+    "Effects": {
+      "Naked": {},
+      "Placeholder Back 1": {
+        "Critical Chance": 10,
+        "Magic Critical Chance": -10,
+        "Ranged Critical Chance": 10
+      }
+    }
   },
   "Gauntlets": {
     "Piece": ["Naked", "Placeholder Gauntlets 1"],
-    "Effects": [{}, {}]
+    "Effects": {
+      "Naked": {},
+      "Placeholder Gauntlets 1": {
+        "Critical Damage": 10,
+        "Weak Spot Damage": -10
+      }
+    }
   },
   "Ring": {
-    "Piece": ["Naked", "Placeholder Ring 1 1"],
-    "Effects": [{}, {}]
+    "Piece": ["Naked", "Placeholder Ring 1", "Placeholder Ring 2"],
+    "Effects": {
+      "Naked": {},
+      "Placeholder Ring 1": {
+        "Melee Damage": 10,
+        "Spell Damage": -10,
+        "Ranged Damage": 10,
+        "Attack Speed": -10
+      },
+      "Placeholder Ring 2": {
+        "Alchemy Bonus": 10,
+        "Cooking Bonus": -10,
+        "Handcrafting Bonus": 10,
+        "Lifesteal": -10,
+        "Movement Speed Multiplier": 10,
+        "Stamina and Mana Cost": -10
+      }
+    }
   },
   "Greaves": {
     "Piece": ["Naked", "Placeholder Greaves 1"],
-    "Effects": [{}, {}]
+    "Effects": {
+      "Naked": {},
+      "Placeholder Greaves 1": {
+        "Sneak Damage": 10,
+        "Noise": -10
+      }
+    }
   },
   "Boots": {
     "Piece": ["Naked", "Placeholder Boots 1"],
-    "Effects": [{}, {}]
+    "Effects": {
+      "Naked": {},
+      "Placeholder Boots 1": {
+        "Price of bought goods": 10,
+        "Price of sold goods": -10
+      }
+    }
   }
 }

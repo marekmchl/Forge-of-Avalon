@@ -51,27 +51,67 @@ class Attribute(Frame):
         self.sub_button.grid(row = 0, column = 2, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
 
 class EquipmentPiece(Frame):
-    def __init__(self, master, name, bound_var, input_list):
+    equipment_memory = {
+        "Helmet":"Naked",
+        "Cuirass":"Naked",
+        "Greaves":"Naked",
+        "Boots":"Naked",
+        "Gauntlets":"Naked",
+        "Ring 1":"Naked",
+        "Ring 2":"Naked",
+        "Amulet":"Naked",
+        "Back":"Naked"
+    }
+
+    def __init__(self, master, name, slot):
         super().__init__(master)
         self.configure(bg = settings["colors"]["section_bg"])
         self.name_label = Label(self, text = name, anchor = "w", bg = settings["colors"]["section_bg"], fg = settings["colors"]["line_fg"])
         self.name_label.configure(width = settings["sizes"]["equipment_name_width"])
         self.name_label.pack(side = LEFT, fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-        self.value_box = Combobox(self, textvariable = bound_var, width = settings["sizes"]["equipment_selector_width"])
-        self.value_box["values"] = input_list
+
+        self.slot = slot
+        self.old = None
+        self.current = state_dict["Equipment"][self.slot]
+        self.current.trace("w", self.apply_equipment_change_effects)
+
+        self.value_box = Combobox(self, textvariable = self.current, width = settings["sizes"]["equipment_selector_width"])
+        if self.slot == "Ring 1" or self.slot == "Ring 2":
+            self.value_box["values"] = equipment_dict["Ring"]["Piece"]
+        else:
+            self.value_box["values"] = equipment_dict[self.slot]["Piece"]
         self.value_box.pack(side = RIGHT, fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+
+    def apply_equipment_change_effects(self, *args):
+        if self.slot == "Ring 1" or self.slot == "Ring 2":
+            slot = "Ring"
+        else:
+            slot = self.slot
+
+        if self.old != None:
+            # Remove old active effects
+            for (stat_name, stat_change) in equipment_dict[slot]["Effects"][self.old].items():
+                state_dict["Statistics"][stat_name].set(state_dict["Statistics"][stat_name].get() - stat_change)
+
+        # Update self.old
+        self.old = self.current.get()
+
+        # Apply new effects
+        for (stat_name, stat_change) in equipment_dict[slot]["Effects"][self.current.get()].items():
+            state_dict["Statistics"][stat_name].set(state_dict["Statistics"][stat_name].get() + stat_change)
+
 
 def get_equipment(master):
     equipment = Frame(master, bg = settings["colors"]["section_bg"])
-    EquipmentPiece(equipment, "Helmet", state_dict["Equipment"]["Helmet"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Amulet", state_dict["Equipment"]["Amulet"], equipment_dict["Amulet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Cuirass", state_dict["Equipment"]["Cuirass"], equipment_dict["Cuirass"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Back", state_dict["Equipment"]["Back"], equipment_dict["Back"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Gauntlets", state_dict["Equipment"]["Gauntlets"], equipment_dict["Gauntlets"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Ring", state_dict["Equipment"]["Ring 1"], equipment_dict["Ring"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Ring", state_dict["Equipment"]["Ring 2"], equipment_dict["Ring"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Greaves", state_dict["Equipment"]["Greaves"], equipment_dict["Greaves"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Boots", state_dict["Equipment"]["Boots"], equipment_dict["Boots"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Helmet", "Helmet").pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Amulet", "Amulet").pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Cuirass", "Cuirass").pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Back", "Back").pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Gauntlets", "Gauntlets").pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Ring", "Ring 1").pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Ring", "Ring 2").pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Greaves", "Greaves").pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Boots", "Boots").pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
     return equipment
 
 def get_attributes(master):
