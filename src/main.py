@@ -12,7 +12,7 @@ def main():
     left = Frame(win, bg = settings["colors"]["window_bg"])
     left.grid(row = 0, column = 0, padx = settings["sizes"]["window_padding"], pady = settings["sizes"]["window_padding"])
 
-    lvl = Line(left, "Level", state["Level"])
+    lvl = Line(left, "Level", state["Level"], settings["sizes"]["level_name_width"])
     lvl.pack(expand = True, fill = BOTH, side = TOP, padx = settings["sizes"]["section_padding"], pady = settings["sizes"]["section_padding"])
 
     attributes = get_attributes(left)

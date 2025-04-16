@@ -11,6 +11,11 @@
     "window_padding": 15,
     "section_padding": 10,
     "line_padding": 5,
+    "level_name_width": 8,
+    "attribute_name_width": 8,
+    "equipment_name_width": 8,
+    "equipment_selector_width": 20,
+    "statistic_name_width": 25,
     "font_size": 11
   }
 }
