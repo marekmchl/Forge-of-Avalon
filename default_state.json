@@ -30,6 +30,7 @@
     "Armor Weight Multiplier": 0,
     "Mana Regeneration/s": 2.16,
     "Stamina Regeneration/s": 41.4,
+    "Stamina and Mana Cost": 100,
     "Critical Chance": 1,
     "Magic Critical Chance": 1,
     "Ranged Critical Chance": 1,
