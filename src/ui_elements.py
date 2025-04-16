@@ -64,14 +64,14 @@ class EquipmentPiece(Frame):
 def get_equipment(master):
     equipment = Frame(master, bg = settings["colors"]["section_bg"])
     EquipmentPiece(equipment, "Helmet", state_dict["Equipment"]["Helmet"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Amulet", state_dict["Equipment"]["Amulet"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Cuirass", state_dict["Equipment"]["Cuirass"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Back", state_dict["Equipment"]["Back"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Gauntlets", state_dict["Equipment"]["Gauntlets"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Ring", state_dict["Equipment"]["Ring 1"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Ring", state_dict["Equipment"]["Ring 2"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Greaves", state_dict["Equipment"]["Greaves"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    EquipmentPiece(equipment, "Boots", state_dict["Equipment"]["Boots"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Amulet", state_dict["Equipment"]["Amulet"], equipment_dict["Amulet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Cuirass", state_dict["Equipment"]["Cuirass"], equipment_dict["Cuirass"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Back", state_dict["Equipment"]["Back"], equipment_dict["Back"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Gauntlets", state_dict["Equipment"]["Gauntlets"], equipment_dict["Gauntlets"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Ring", state_dict["Equipment"]["Ring 1"], equipment_dict["Ring"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Ring", state_dict["Equipment"]["Ring 2"], equipment_dict["Ring"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Greaves", state_dict["Equipment"]["Greaves"], equipment_dict["Greaves"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Boots", state_dict["Equipment"]["Boots"], equipment_dict["Boots"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
     return equipment
 
 def get_attributes(master):

@@ -1,38 +1,34 @@
 {
-    "Helmet":{
-        "Piece":["Naked", "Placeholder Helmet 1"],
-        "Effects":[{}, {}]
-    },
-    "Amulet":{
-        "Piece":["Naked", "Placeholder Amulet 1"],
-        "Effects":[{}, {}]
-    },
-    "Cuirass":{
-        "Piece":["Naked", "Placeholder Cuirass 1"],
-        "Effects":[{}, {}]
-    },
-    "Back":{
-        "Piece": ["Naked", "Placeholder Back 1"],
-        "Effects":[{}, {}]
-    },
-    "Gauntlets":{
-        "Piece":["Naked", "Placeholder Gauntlets 1"],
-        "Effects":[{}, {}]
-    },
-    "Ring 1":{
-        "Piece":["Naked", "Placeholder Ring 1 1"],
-        "Effects":[{}, {}]
-    },
-    "Ring 2":{
-        "Piece":["Naked", "Placeholder Ring 2 1"],
-        "Effects":[{}, {}]
-    },
-    "Greaves":{
-        "Piece":["Naked", "Placeholder Greaves 1"],
-        "Effects":[{}, {}]
-    },
-    "Boots":{
-        "Piece":["Naked", "Placeholder Boots 1"],
-        "Effects":[{}, {}]
-    }
+  "Helmet": {
+    "Piece": ["Naked", "Placeholder Helmet 1"],
+    "Effects": [{}, {}]
+  },
+  "Amulet": {
+    "Piece": ["Naked", "Placeholder Amulet 1"],
+    "Effects": [{}, {}]
+  },
+  "Cuirass": {
+    "Piece": ["Naked", "Placeholder Cuirass 1"],
+    "Effects": [{}, {}]
+  },
+  "Back": {
+    "Piece": ["Naked", "Placeholder Back 1"],
+    "Effects": [{}, {}]
+  },
+  "Gauntlets": {
+    "Piece": ["Naked", "Placeholder Gauntlets 1"],
+    "Effects": [{}, {}]
+  },
+  "Ring": {
+    "Piece": ["Naked", "Placeholder Ring 1 1"],
+    "Effects": [{}, {}]
+  },
+  "Greaves": {
+    "Piece": ["Naked", "Placeholder Greaves 1"],
+    "Effects": [{}, {}]
+  },
+  "Boots": {
+    "Piece": ["Naked", "Placeholder Boots 1"],
+    "Effects": [{}, {}]
+  }
 }
