@@ -11,15 +11,15 @@
     "Practicality": 1
   },
   "Equipment": {
-    "Helmet": null,
-    "Cuirass": null,
-    "Greaves": null,
-    "Boots": null,
-    "Gauntlets": null,
-    "Ring 1": null,
-    "Ring 2": null,
-    "Amulet": null,
-    "Back": null
+    "Helmet": "Naked",
+    "Cuirass": "Naked",
+    "Greaves": "Naked",
+    "Boots": "Naked",
+    "Gauntlets": "Naked",
+    "Ring 1": "Naked",
+    "Ring 2": "Naked",
+    "Amulet": "Naked",
+    "Back": "Naked"
   },
   "Statistics": {
     "Health": 48,

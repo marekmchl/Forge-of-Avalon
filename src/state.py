@@ -1,14 +1,18 @@
-from tkinter import IntVar, DoubleVar
+from tkinter import IntVar, DoubleVar, StringVar
 from json import loads
 
 def make_updatable(master, state_dict):
     for (name, value) in state_dict.items():
         if isinstance(value, dict):
             state_dict[name] = make_updatable(master, value)
+        elif isinstance(value, list):
+            state_dict[name] = make_updatable(master, value)
         elif isinstance(value, int):
             state_dict[name] = IntVar(master, value, name)
         elif isinstance(value, float):
             state_dict[name] = DoubleVar(master, value, name)
+        elif isinstance(value, str):
+            state_dict[name] = StringVar(master, value, name)
     return state_dict
 
 def load_state():

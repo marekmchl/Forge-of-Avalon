@@ -1,8 +1,10 @@
-from tkinter import BOTH, Button, Tk, Frame, Label
+from tkinter import BOTH, X, Button, Tk, Frame, Label
 from tkinter.constants import LEFT, RIGHT
+from tkinter.ttk import Combobox
 from settings import settings
 from state import state_dict
 from attribute_modification import inc_str, dec_str, inc_end, dec_end, inc_dex, dec_dex, inc_spi, dec_spi, inc_per, dec_per, inc_pra, dec_pra
+from equipment import equipment_dict
 
 class Window(Tk):
     def __init__(self, title):
@@ -25,28 +27,47 @@ class Line(Frame):
                 Label(self.value_label, text = "%", justify = RIGHT,bg = settings["colors"]["line_bg"], fg = settings["colors"]["line_fg"]).pack(side = RIGHT)
             else:
                 self.value_label = Label(self, textvariable = value_var, justify = RIGHT,bg = settings["colors"]["line_bg"], fg = settings["colors"]["line_fg"])
-            self.value_label.pack(side = RIGHT, fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+            self.value_label.pack(side = RIGHT, fill = "none", expand = False, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
 
 class Attribute(Frame):
     def __init__(self, master, name, value_var, inc_func, dec_func):
         super().__init__(master)
         self.configure(bg = settings["colors"]["section_bg"])
 
-        self.name_label = Label(self, text = name, justify = LEFT,bg = settings["colors"]["section_bg"], fg = settings["colors"]["line_fg"])
-        # self.name_label.pack(side = LEFT, fill = BOTH, expand = True)
+        self.name_label = Label(self, text = name, anchor = "w", bg = settings["colors"]["section_bg"], fg = settings["colors"]["line_fg"])
         self.name_label.grid(row = 0, column = 0, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
 
-        self.value_label = Label(self, textvariable = value_var, justify = RIGHT,bg = settings["colors"]["line_bg"], fg = settings["colors"]["line_fg"])
-        # self.value_label.pack(side = RIGHT, fill = BOTH)
+        self.value_label = Label(self, textvariable = value_var, anchor = "e", bg = settings["colors"]["line_bg"], fg = settings["colors"]["line_fg"])
         self.value_label.grid(row = 0, column = 1, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
 
         self.add_button = Button(self, text = "+", bg = settings["colors"]["line_bg"], activebackground = settings["colors"]["line_fg"], fg = settings["colors"]["line_fg"], activeforeground = settings["colors"]["line_bg"], command = inc_func)
-        # self.add_button.pack(side = RIGHT, fill = BOTH)
         self.add_button.grid(row = 0, column = 2, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
 
         self.sub_button = Button(self, text = "-", bg = settings["colors"]["line_bg"], activebackground = settings["colors"]["line_fg"], fg = settings["colors"]["line_fg"], activeforeground = settings["colors"]["line_bg"], command = dec_func)
-        # self.sub_button.pack(side = RIGHT, fill = BOTH)
         self.sub_button.grid(row = 0, column = 3, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+
+class EquipmentPiece(Frame):
+    def __init__(self, master, name, bound_var, input_list):
+        super().__init__(master)
+        self.configure(bg = settings["colors"]["section_bg"])
+        self.name_label = Label(self, text = name, justify = LEFT,bg = settings["colors"]["section_bg"], fg = settings["colors"]["line_fg"])
+        self.name_label.pack(side = LEFT, fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+        self.value_box = Combobox(self, textvariable = bound_var, justify = RIGHT)
+        self.value_box["values"] = input_list
+        self.value_box.pack(side = RIGHT, fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+
+def get_equipment(master):
+    equipment = Frame(master, bg = settings["colors"]["section_bg"])
+    EquipmentPiece(equipment, "Helmet", state_dict["Equipment"]["Helmet"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Amulet", state_dict["Equipment"]["Amulet"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Cuirass", state_dict["Equipment"]["Cuirass"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Back", state_dict["Equipment"]["Back"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Gauntlets", state_dict["Equipment"]["Gauntlets"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Ring", state_dict["Equipment"]["Ring 1"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Ring", state_dict["Equipment"]["Ring 2"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Greaves", state_dict["Equipment"]["Greaves"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    EquipmentPiece(equipment, "Boots", state_dict["Equipment"]["Boots"], equipment_dict["Helmet"]["Piece"]).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    return equipment
 
 def get_attributes(master):
     attributes = Frame(master, bg = settings["colors"]["section_bg"])
