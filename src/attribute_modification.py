@@ -99,7 +99,8 @@ def inc_pra():
     state_dict["Statistics"]["Handcrafting Bonus"].set(round((state_dict["Statistics"]["Handcrafting Bonus"].get() + 0.1), 2))
     state_dict["Statistics"]["Weak Spot Damage"].set(state_dict["Statistics"]["Weak Spot Damage"].get() + 5)
     state_dict["Statistics"]["Price of sold goods"].set(state_dict["Statistics"]["Price of sold goods"].get() + 10)
-    state_dict["Statistics"]["Stamina and Mana Cost"].set(state_dict["Statistics"]["Stamina and Mana Cost"].get() - 1)
+    state_dict["Statistics"]["Stamina Cost"].set(state_dict["Statistics"]["Stamina Cost"].get() - 1)
+    state_dict["Statistics"]["Mana Cost"].set(state_dict["Statistics"]["Mana Cost"].get() - 1)
 
 def dec_pra():
     if state_dict["Attributes"]["Practicality"].get() <=1:
@@ -112,4 +113,5 @@ def dec_pra():
     state_dict["Statistics"]["Handcrafting Bonus"].set(round((state_dict["Statistics"]["Handcrafting Bonus"].get() - 0.1), 2))
     state_dict["Statistics"]["Weak Spot Damage"].set(state_dict["Statistics"]["Weak Spot Damage"].get() - 5)
     state_dict["Statistics"]["Price of sold goods"].set(state_dict["Statistics"]["Price of sold goods"].get() - 10)
-    state_dict["Statistics"]["Stamina and Mana Cost"].set(state_dict["Statistics"]["Stamina and Mana Cost"].get() + 1)
+    state_dict["Statistics"]["Stamina Cost"].set(state_dict["Statistics"]["Stamina Cost"].get() + 1)
+    state_dict["Statistics"]["Mana Cost"].set(state_dict["Statistics"]["Mana Cost"].get() + 1)
