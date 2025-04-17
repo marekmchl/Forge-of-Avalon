@@ -1,9 +1,46 @@
 {
   "Helmet": {
-    "Piece": ["Naked", "Placeholder Helmet 1"],
+    "Piece": [
+      "Naked",
+      "Assassin's Mask",
+      "Duel Knight Helmet",
+      "Festering Helm",
+      "Flayed Drowner's Conch",
+      "Knight's Helmet",
+      "Looter's Mask",
+      "Weak Corpse Eater's Cap",
+      "Weak Revenant's Cowl",
+      "__Testing__ Helmet"
+    ],
     "Effects": {
       "Naked": {},
-      "Placeholder Helmet 1": {
+      "Weak Revenant's Cowl": {
+        "Melee Damage": 10,
+        "Weak Spot Damage": 10
+      },
+      "Festering Helm": {
+        "Stamina Regeneration/s": 10
+      },
+      "Flayed Drowner's Conch": {
+        "Health": 10
+      },
+      "Weak Corpse Eater's Cap": {
+        "Attack Speed": 5
+      },
+      "Looter's Mask": {
+        "Critical Chance": 3
+      },
+      "Duel Knight Helmet": {
+        "Stamina": 5,
+        "Stamina Cost": -10
+      },
+      "Knight's Helmet": {
+        "Stamina Cost": -20
+      },
+      "Assassin's Mask": {
+        "Sneak Damage": 5
+      },
+      "__Testing__ Helmet": {
         "Health": 10,
         "Mana": -10,
         "Stamina": 10,
@@ -12,30 +49,130 @@
     }
   },
   "Amulet": {
-    "Piece": ["Naked", "Placeholder Amulet 1"],
+    "Piece": [
+      "Naked",
+      "Ambergris Fragment",
+      "Ambergris Fragment +2",
+      "Arcane Weaver's Prism +1",
+      "Aspiring Warrior Amulet",
+      "Colm's Finger Necklace",
+      "Druid's Talisman",
+      "Druid's Wishgem",
+      "Hunter's Amulet",
+      "Ironlung Stone +2",
+      "Novice Amulet",
+      "Oldsteel Fang",
+      "__Testing__ Amulet"
+    ],
     "Effects": {
       "Naked": {},
-      "Placeholder Amulet 1": {
+      "Druid's Talisman": {
+        "Mana Cost": -5
+      },
+      "Druid's Wishgem": {
+        "Mana": 15
+      },
+      "Oldsteel Fang": {
+        "Lifesteal": 3
+      },
+      "Ambergris Fragment": {
+        "Health": 10
+      },
+      "Ambergris Fragment +2": {
+        "Health": 30
+      },
+      "Ironlung Stone +2": {
+        "Stamina Regeneration/s": 30
+      },
+      "Colm's Finger Necklace": {
+        "Critical Chance": 5
+      },
+      "Hunter's Amulet": {
+        "Weak Spot Damage": 20
+      },
+      "Novice Amulet": {
+        "Spell Damage": 5
+      },
+      "Aspiring Warrior Amulet": {
+        "Melee Damage": 1,
+        "Ranged Damage": 1
+      },
+      "__Testing__ Amulet": {
         "Armor": 10,
         "Armor Weight Multiplier": -10
+      },
+      "Arcane Weaver's Prism +1": {
+        "Mana Regeneration/s": 2
       }
     }
   },
   "Cuirass": {
-    "Piece": ["Naked", "Placeholder Cuirass 1"],
+    "Piece": [
+      "Naked",
+      "Ancient Knight's Breastplate",
+      "Assassin's Tunic",
+      "Chestplate of The Last Man",
+      "Duel Knight Armor",
+      "Fashionable Doublet",
+      "Grief-torn Armor",
+      "Veteran Bandit Armor",
+      "Weak Corpse Eater's Rags",
+      "Weak Festering Chestguard",
+      "Weak Layed Drowner's Carapace",
+      "Weak Revenant's Ribcage",
+      "__Testing__ Cuirass"
+    ],
     "Effects": {
       "Naked": {},
-      "Placeholder Cuirass 1": {
+      "Weak Corpse Eater's Rags": {
+        "Attack Speed": 10
+      },
+      "Weak Revenant's Ribcage": {
+        "Melee Damage": 20,
+        "Weak Spot Damage": 20
+      },
+      "Weak Festering Chestguard": {
+        "Stamina Regeneration/s": 15
+      },
+      "Weak Layed Drowner's Carapace": {
+        "Health": 15
+      },
+      "Veteran Bandit Armor": {
+        "Stamina": 1
+      },
+      "Grief-torn Armor": {
+        "Health": 5
+      },
+      "Chestplate of The Last Man": {
+        "Melee Damage": 3
+      },
+      "Duel Knight Armor": {
+        "Stamina": 10
+      },
+      "Assassin's Tunic": {
+        "Sneak Damage": 10
+      },
+      "Ancient Knight's Breastplate": {
+        "Stamina": 10
+      },
+      "Fashionable Doublet": {
+        "Attack Speed": 10
+      },
+      "__Testing__ Cuirass": {
         "Mana Regeneration/s": 10,
         "Stamina Regeneration/s": -10
       }
     }
   },
   "Back": {
-    "Piece": ["Naked", "Placeholder Back 1"],
+    "Piece": ["Naked", "Duel Knight Cape", "__Testing__ Cape"],
     "Effects": {
       "Naked": {},
-      "Placeholder Back 1": {
+      "Duel Knight Cape": {
+        "Stamina Regeneration/s": 25,
+        "Critical Chance": 10
+      },
+      "__Testing__ Cape": {
         "Critical Chance": 10,
         "Magic Critical Chance": -10,
         "Ranged Critical Chance": 10
@@ -43,50 +180,151 @@
     }
   },
   "Gauntlets": {
-    "Piece": ["Naked", "Placeholder Gauntlets 1"],
+    "Piece": [
+      "Naked",
+      "Assassin's Gloves",
+      "Duel Knight Gloves",
+      "Knight's Gauntlets",
+      "__Testing__ Gauntlets"
+    ],
     "Effects": {
       "Naked": {},
-      "Placeholder Gauntlets 1": {
+      "Assassin's Gloves": {
+        "Sneak Damage": 5
+      },
+      "Duel Knight Gloves": {
+        "Melee Damage": 20
+      },
+      "Knight's Gauntlets": {
+        "Stamina": 7
+      },
+      "__Testing__ Gauntlets": {
         "Critical Damage": 10,
         "Weak Spot Damage": -10
       }
     }
   },
   "Ring": {
-    "Piece": ["Naked", "Placeholder Ring 1", "Placeholder Ring 2"],
+    "Piece": [
+      "Naked",
+      "Archer's ring",
+      "Athlete's pride",
+      "Fisherman's Seal",
+      "Kamelot's ring",
+      "Lesser Health Ring",
+      "Lesser Mana Ring",
+      "Oldsteel Ring",
+      "Perilous Orb",
+      "Perilous Orb +2",
+      "Ring of Protection",
+      "Ring of Toughness",
+      "The perfect ring for a warrior",
+      "__Testing__ Ring",
+      "__Testing__ Ring 2"
+    ],
     "Effects": {
       "Naked": {},
-      "Placeholder Ring 1": {
+      "Archer's ring": {
+        "Ranged Damage": 15
+      },
+      "Athlete's pride": {
+        "Stamina": 5
+      },
+      "Fisherman's Seal": {
+        "Stamina": 3
+      },
+      "Kamelot's ring": {
+        "Health": 10,
+        "Stamina": 5
+      },
+      "Lesser Health Ring": {
+        "Health": 5
+      },
+      "Lesser Mana Ring": {
+        "Mana": 10
+      },
+      "Oldsteel Ring": {
+        "Health": 3,
+        "Stamina": 3
+      },
+      "Perilous Orb": {
+        "Critical Chance": 3
+      },
+      "Perilous Orb +2": {
+        "Critical Chance": 7
+      },
+      "Ring of Protection": {
+        "Armor": 1
+      },
+      "Ring of Toughness": {
+        "Encumbrance Limit": 25
+      },
+      "The perfect ring for a warrior": {
+        "Melee Damage": 5,
+        "Ranged Damage": 5
+      },
+      "__Testing__ Ring": {
         "Melee Damage": 10,
         "Spell Damage": -10,
         "Ranged Damage": 10,
         "Attack Speed": -10
       },
-      "Placeholder Ring 2": {
+      "__Testing__ Ring 2": {
         "Alchemy Bonus": 10,
         "Cooking Bonus": -10,
         "Handcrafting Bonus": 10,
         "Lifesteal": -10,
         "Movement Speed Multiplier": 10,
-        "Stamina and Mana Cost": -10
+        "Stamina Cost": -10,
+        "Mana Cost": -10
       }
     }
   },
   "Greaves": {
-    "Piece": ["Naked", "Placeholder Greaves 1"],
+    "Piece": [
+      "Naked",
+      "Assassin's Trousers",
+      "Duel Knight Trousers",
+      "Knight's Greaves",
+      "__Testing__ Greaves"
+    ],
     "Effects": {
       "Naked": {},
-      "Placeholder Greaves 1": {
+      "Assassin's Trousers": {
+        "Sneak Damage": 5
+      },
+      "Duel Knight Trousers": {
+        "Stamina": 5
+      },
+      "Knight's Greaves": {
+        "Stamina": 7
+      },
+      "__Testing__ Greaves": {
         "Sneak Damage": 10,
         "Noise": -10
       }
     }
   },
   "Boots": {
-    "Piece": ["Naked", "Placeholder Boots 1"],
+    "Piece": [
+      "Naked",
+      "Assassin's boots",
+      "Duel knight boots",
+      "Knight's boots",
+      "__Testing__ Boots"
+    ],
     "Effects": {
       "Naked": {},
-      "Placeholder Boots 1": {
+      "Assassin's boots": {
+        "Sneak Damage": 5
+      },
+      "Duel knight boots": {
+        "Stamina": 5
+      },
+      "Knight's boots": {
+        "Stamina": 5
+      },
+      "__Testing__ Boots": {
         "Price of bought goods": 10,
         "Price of sold goods": -10
       }

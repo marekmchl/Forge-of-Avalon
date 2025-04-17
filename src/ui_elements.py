@@ -91,14 +91,14 @@ class EquipmentPiece(Frame):
         if self.old != None:
             # Remove old active effects
             for (stat_name, stat_change) in equipment_dict[slot]["Effects"][self.old].items():
-                state_dict["Statistics"][stat_name].set(state_dict["Statistics"][stat_name].get() - stat_change)
+                state_dict["Statistics"][stat_name].set(round(state_dict["Statistics"][stat_name].get() - stat_change, 2))
 
         # Update self.old
         self.old = self.current.get()
 
         # Apply new effects
         for (stat_name, stat_change) in equipment_dict[slot]["Effects"][self.current.get()].items():
-            state_dict["Statistics"][stat_name].set(state_dict["Statistics"][stat_name].get() + stat_change)
+            state_dict["Statistics"][stat_name].set(round(state_dict["Statistics"][stat_name].get() + stat_change, 2))
 
 
 def get_equipment(master):
@@ -158,7 +158,8 @@ def get_statistics(master):
     left_3.pack(fill = BOTH, expand = True, padx = settings["sizes"]["section_padding"], pady = settings["sizes"]["section_padding"])
     Line(left_3, "Mana Regeneration/s", state_dict["Statistics"]["Mana Regeneration/s"], settings["sizes"]["statistic_name_width"]).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
     Line(left_3, "Stamina Regeneration/s", state_dict["Statistics"]["Stamina Regeneration/s"], settings["sizes"]["statistic_name_width"]).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    Line(left_3, "Stamina & Mana Cost", state_dict["Statistics"]["Stamina and Mana Cost"], settings["sizes"]["statistic_name_width"], True).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Line(left_3, "Stamina Cost", state_dict["Statistics"]["Stamina Cost"], settings["sizes"]["statistic_name_width"], True).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Line(left_3, "Mana Cost", state_dict["Statistics"]["Mana Cost"], settings["sizes"]["statistic_name_width"], True).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
 
     left_4 = Frame(left_half, bg = settings["colors"]["section_bg"])
     left_4.pack(fill = BOTH, expand = True, padx = settings["sizes"]["section_padding"], pady = settings["sizes"]["section_padding"])
@@ -190,6 +191,7 @@ def get_statistics(master):
     right_3.pack(fill = BOTH, expand = True, padx = settings["sizes"]["section_padding"], pady = settings["sizes"]["section_padding"])
     Line(right_3, "Price of bought goods", state_dict["Statistics"]["Price of bought goods"], settings["sizes"]["statistic_name_width"], True).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
     Line(right_3, "Price of sold goods", state_dict["Statistics"]["Price of sold goods"], settings["sizes"]["statistic_name_width"], True).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Line(right_3, "", None, settings["sizes"]["statistic_name_width"]).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
     Line(right_3, "", None, settings["sizes"]["statistic_name_width"]).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
 
     right_4 = Frame(right_half, bg = settings["colors"]["section_bg"])
