@@ -1,19 +1,26 @@
-from tkinter import IntVar, DoubleVar, StringVar
+from tkinter import BooleanVar, IntVar, DoubleVar, StringVar
 from json import loads
 
-def make_updatable(master, state_dict):
-    for (name, value) in state_dict.items():
-        if isinstance(value, dict):
-            state_dict[name] = make_updatable(master, value)
-        elif isinstance(value, list):
-            state_dict[name] = make_updatable(master, value)
-        elif isinstance(value, int):
-            state_dict[name] = IntVar(master, value, name)
-        elif isinstance(value, float):
-            state_dict[name] = DoubleVar(master, value, name)
-        elif isinstance(value, str):
-            state_dict[name] = StringVar(master, value, name)
-    return state_dict
+def make_updatable(master, state_var):
+    if isinstance(state_var, dict):
+        for (name, value) in state_var.items():
+            if isinstance(value, dict):
+                state_var[name] = make_updatable(master, value)
+            elif isinstance(value, list):
+                state_var[name] = make_updatable(master, value)
+            elif isinstance(value, int):
+                state_var[name] = IntVar(master, value, name)
+            elif isinstance(value, float):
+                state_var[name] = DoubleVar(master, value, name)
+            elif isinstance(value, str):
+                state_var[name] = StringVar(master, value, name)
+            elif isinstance(value, bool):
+                state_var[name] = BooleanVar(master, value, name)
+    elif isinstance(state_var, list):
+        for i, value in enumerate(state_var):
+            state_var[i] = make_updatable(master, value)
+
+    return state_var
 
 def load_state():
     try:

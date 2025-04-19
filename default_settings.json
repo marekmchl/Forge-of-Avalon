@@ -3,10 +3,11 @@
     "window_bg": "#222222",
     "section_bg": "#444444",
     "line_bg": "#666666",
-    "line_fg": "#ffffff"
+    "line_fg": "#ffffff",
+    "line_fg_dimmed": "#aaaaaa"
   },
   "sizes": {
-    "window_height": 1000,
+    "window_height": 1150,
     "window_width": 2000,
     "window_padding": 13,
     "section_padding": 8,
@@ -14,7 +15,9 @@
     "level_name_width": 8,
     "attribute_name_width": 8,
     "equipment_name_width": 8,
-    "equipment_selector_width": 30,
+    "equipment_selector_width": 28,
+    "skill_name_width": 16,
+    "skill_selector_width": 6,
     "statistic_name_width": 25,
     "font_size": 11
   }

@@ -1,8 +1,8 @@
-from tkinter import BOTH, Button, Tk, Frame, Label
-from tkinter.constants import LEFT, RIGHT
+from tkinter import BOTH, IntVar, Button, Tk, Frame, Label, Scale
+from tkinter.constants import HORIZONTAL, LEFT, RIGHT
 from tkinter.ttk import Combobox
 from settings import settings
-from state import state_dict
+from state import state_dict, update_level
 from attribute_modification import inc_str, dec_str, inc_end, dec_end, inc_dex, dec_dex, inc_spi, dec_spi, inc_per, dec_per, inc_pra, dec_pra
 from equipment import equipment_dict
 
@@ -100,6 +100,62 @@ class EquipmentPiece(Frame):
         for (stat_name, stat_change) in equipment_dict[slot]["Effects"][self.current.get()].items():
             state_dict["Statistics"][stat_name].set(round(state_dict["Statistics"][stat_name].get() + stat_change, 2))
 
+class Skill(Frame):
+    def __init__(self, master, name, num_levels):
+        super().__init__(master)
+        self.configure(bg = settings["colors"]["section_bg"])
+
+        self.name = name
+        self.name_label = Label(self, text = name, anchor = "w", bg = settings["colors"]["section_bg"], fg = settings["colors"]["line_fg"], width = settings["sizes"]["skill_name_width"])
+        self.name_label.pack(side = LEFT, fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+
+        self.current_level = IntVar(self, state_dict["Skills"][self.name]["current_level"].get(), f"{self.name} - value variable")
+        self.current_level.trace("w", self.apply_skill_effects)
+        self.num_levels = num_levels
+        self.old_level = 0
+
+        self.right_side = Frame(self, bg = settings["colors"]["section_bg"], width = settings["sizes"]["skill_selector_width"])
+        self.right_side.pack(side = RIGHT, fill = "none", expand = False, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+
+        self.value_element = Scale(self.right_side, variable = self.current_level, from_ = 0, to = self.num_levels, resolution = 1, orient = HORIZONTAL, bg = settings["colors"]["line_bg"], fg = settings["colors"]["line_fg"])
+        self.value_element.pack(fill = "none", expand = False, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+
+    def apply_skill_effects(self, *args):
+        if self.old_level > 0:
+            # Needs reseting
+            state_dict["Invested_skill_points"].set(state_dict["Invested_skill_points"].get() - self.old_level)
+            for (name, value_list) in state_dict["Skills"][self.name]["effects"].items():
+                state_dict["Statistics"][name].set(round(state_dict["Statistics"][name].get() - value_list[self.old_level - 1], 2))
+
+        if self.current_level.get() > 0:
+            # Needs applying
+            state_dict["Invested_skill_points"].set(state_dict["Invested_skill_points"].get() + self.current_level.get())
+            for (name, value_list) in state_dict["Skills"][self.name]["effects"].items():
+                state_dict["Statistics"][name].set(round(state_dict["Statistics"][name].get() + value_list[self.current_level.get() - 1], 2))
+
+        # Update old_level
+        self.old_level = self.current_level.get()
+
+        # Make new current level official
+        state_dict["Skills"][self.name]["current_level"].set(self.current_level.get())
+
+        update_level()
+        return
+
+def get_skills(master):
+    skills = Frame(master, bg = settings["colors"]["section_bg"])
+    Skill(skills, "Godly Physique", 5).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Frequent Exercise", 1).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Quickened Strikes", 4).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Arcane Teachings", 5).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Mana Battery", 5).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Silent Hunter", 3).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Assassin's Doctrine", 1).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Extra Lucky", 3).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Go for the eyes", 4).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Mercantile Skills", 4).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Skill(skills, "Armored Skin", 3).pack(padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    return skills
 
 def get_equipment(master):
     equipment = Frame(master, bg = settings["colors"]["section_bg"])
@@ -192,7 +248,7 @@ def get_statistics(master):
     Line(right_3, "Price of bought goods", state_dict["Statistics"]["Price of bought goods"], settings["sizes"]["statistic_name_width"], True).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
     Line(right_3, "Price of sold goods", state_dict["Statistics"]["Price of sold goods"], settings["sizes"]["statistic_name_width"], True).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
     Line(right_3, "", None, settings["sizes"]["statistic_name_width"]).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
-    Line(right_3, "", None, settings["sizes"]["statistic_name_width"]).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
+    Line(right_3, "Weight", state_dict["Statistics"]["Weight"], settings["sizes"]["statistic_name_width"]).pack(fill = BOTH, expand = True, padx = settings["sizes"]["line_padding"], pady = settings["sizes"]["line_padding"])
 
     right_4 = Frame(right_half, bg = settings["colors"]["section_bg"])
     right_4.pack(fill = BOTH, expand = True, padx = settings["sizes"]["section_padding"], pady = settings["sizes"]["section_padding"])

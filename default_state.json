@@ -28,8 +28,8 @@
     "Encumbrance Limit": 110,
     "Armor": 0,
     "Armor Weight Multiplier": 0,
-    "Mana Regeneration/s": 2.16,
-    "Stamina Regeneration/s": 41.4,
+    "Mana Regeneration/s": 1.8,
+    "Stamina Regeneration/s": 34.5,
     "Stamina Cost": 100,
     "Mana Cost": 100,
     "Critical Chance": 1,
@@ -40,7 +40,7 @@
     "Melee Damage": 81,
     "Ranged Damage": 83,
     "Spell Damage": 82,
-    "Attack Speed": 125,
+    "Attack Speed": 104,
     "Sneak Damage": 108,
     "Noise": 97,
     "Price of bought goods": 100,
@@ -49,6 +49,122 @@
     "Cooking Bonus": 0.1,
     "Handcrafting Bonus": 0.1,
     "Lifesteal": 0,
-    "Movement Speed Multiplier": 120
+    "Movement Speed Multiplier": 100,
+    "Weight": 0.0
+  },
+  "Skills": {
+    "Godly Physique": {
+      "parent_skill": null,
+      "current_level": 0,
+      "num_levels": 5,
+      "effects": {
+        "Melee Damage": [5, 10, 15, 20, 25]
+      },
+      "description": "Increases Melee Damage by 5/10/15/20/25%."
+    },
+    "Frequent Exercise": {
+      "parent_skill": null,
+      "current_level": 0,
+      "num_levels": 1,
+      "effects": {
+        "Stamina": [7]
+      },
+      "description": "Gain 7 max Stamina."
+    },
+    "Quickened Strikes": {
+      "parent_skill": null,
+      "current_level": 0,
+      "num_levels": 4,
+      "effects": {
+        "Attack Speed": [2, 4, 6, 8]
+      },
+      "description": "Increase Attack Speed by 2/4/6/8%."
+    },
+    "Arcane Teachings": {
+      "parent_skill": null,
+      "current_level": 0,
+      "num_levels": 5,
+      "effects": {
+        "Spell Damage": [10, 20, 30, 40, 50]
+      },
+      "description": "Your Spell Damage is increased by 10/20/30/40/50%."
+    },
+    "Mana Battery": {
+      "parent_skill": null,
+      "current_level": 0,
+      "num_levels": 5,
+      "effects": {
+        "Mana": [10, 20, 30, 40, 50]
+      },
+      "description": "Gain 10/20/30/40/50 max Mana."
+    },
+    "Silent Hunter": {
+      "parent_skill": null,
+      "current_level": 0,
+      "num_levels": 3,
+      "effects": {
+        "Noise": [-20, -40, -60]
+      },
+      "description": "Decrease Noise & Visibility by 20/40/60%."
+    },
+    "Assassin's Doctrine": {
+      "parent_skill": "Silent Hunter",
+      "current_level": 0,
+      "num_levels": 1,
+      "effects": {
+        "Sneak Damage": [40]
+      },
+      "description": "Increased Sneak Damage by 40%."
+    },
+    "Critical Hits": {
+      "parent_skill": null,
+      "current_level": 0,
+      "num_levels": 1,
+      "effects": {},
+      "description": "This effect is not reflected in this application."
+    },
+    "Extra Lucky": {
+      "parent_skill": "Critical Hits",
+      "current_level": 0,
+      "num_levels": 3,
+      "effects": {
+        "Critical Chance": [2, 4, 6]
+      },
+      "description": "Increased Critical Chance by 2/4/6%."
+    },
+    "Critical Cascade": {
+      "parent_skill": "Extra Lucky",
+      "current_level": 0,
+      "num_levels": 1,
+      "effects": {},
+      "description": "This effect is not reflected in this application."
+    },
+    "Go for the eyes": {
+      "parent_skill": "Critical Cascade",
+      "current_level": 0,
+      "num_levels": 4,
+      "effects": {
+        "Critical Damage": [5, 10, 15, 20]
+      },
+      "description": "Increases Critical Damage by 5/10/15/20%."
+    },
+    "Mercantile Skills": {
+      "parent_skill": null,
+      "current_level": 0,
+      "num_levels": 4,
+      "effects": {
+        "Price of sold goods": [10, 20, 30, 40]
+      },
+      "description": "Selling items is 10/20/30/40% more profitable."
+    },
+    "Armored Skin": {
+      "parent_skill": null,
+      "current_level": 0,
+      "num_levels": 3,
+      "effects": {
+        "Armor": [1, 2, 3]
+      },
+      "description": "Gains 1/2/3 extra Armor."
+    }
   }
 }

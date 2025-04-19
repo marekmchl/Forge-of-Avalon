@@ -15,32 +15,50 @@
     "Effects": {
       "Naked": {},
       "Weak Revenant's Cowl": {
+        "Armor": 3,
+        "Weight": 2,
         "Melee Damage": 10,
         "Weak Spot Damage": 10
       },
       "Festering Helm": {
+        "Armor": 5,
+        "Weight": 1.5,
         "Stamina Regeneration/s": 10
       },
       "Flayed Drowner's Conch": {
+        "Armor": 3,
+        "Weight": 2,
         "Health": 10
       },
       "Weak Corpse Eater's Cap": {
+        "Armor": 1,
+        "Weight": 0.5,
         "Attack Speed": 5
       },
       "Looter's Mask": {
+        "Armor": 1,
+        "Weight": 0.4,
         "Critical Chance": 3
       },
       "Duel Knight Helmet": {
+        "Armor": 5,
+        "Weight": 5,
         "Stamina": 5,
         "Stamina Cost": -10
       },
       "Knight's Helmet": {
+        "Armor": 6,
+        "Weight": 6,
         "Stamina Cost": -20
       },
       "Assassin's Mask": {
+        "Armor": 3,
+        "Weight": 0.4,
         "Sneak Damage": 5
       },
       "__Testing__ Helmet": {
+        "Armor": 1000,
+        "Weight": 0.1,
         "Health": 10,
         "Mana": -10,
         "Stamina": 10,
@@ -67,41 +85,53 @@
     "Effects": {
       "Naked": {},
       "Druid's Talisman": {
+        "Weight": 0.1,
         "Mana Cost": -5
       },
       "Druid's Wishgem": {
+        "Weight": 0.1,
         "Mana": 15
       },
       "Oldsteel Fang": {
+        "Weight": 0.5,
         "Lifesteal": 3
       },
       "Ambergris Fragment": {
+        "Weight": 0.1,
         "Health": 10
       },
       "Ambergris Fragment +2": {
+        "Weight": 0.1,
         "Health": 30
       },
       "Ironlung Stone +2": {
+        "Weight": 0.1,
         "Stamina Regeneration/s": 30
       },
       "Colm's Finger Necklace": {
+        "Weight": 0.1,
         "Critical Chance": 5
       },
       "Hunter's Amulet": {
+        "Weight": 0.1,
         "Weak Spot Damage": 20
       },
       "Novice Amulet": {
+        "Weight": 0.1,
         "Spell Damage": 5
       },
       "Aspiring Warrior Amulet": {
+        "Weight": 0.1,
         "Melee Damage": 1,
         "Ranged Damage": 1
       },
       "__Testing__ Amulet": {
+        "Weight": 0.1,
         "Armor": 10,
         "Armor Weight Multiplier": -10
       },
       "Arcane Weaver's Prism +1": {
+        "Weight": 0.1,
         "Mana Regeneration/s": 2
       }
     }
@@ -113,7 +143,7 @@
       "Assassin's Tunic",
       "Chestplate of The Last Man",
       "Duel Knight Armor",
-      "Fashionable Doublet",
+      "Fashionable Doublet +4",
       "Grief-torn Armor",
       "Veteran Bandit Armor",
       "Weak Corpse Eater's Rags",
@@ -125,40 +155,64 @@
     "Effects": {
       "Naked": {},
       "Weak Corpse Eater's Rags": {
+        "Armor": 2.5,
+        "Weight": 2,
         "Attack Speed": 10
       },
       "Weak Revenant's Ribcage": {
+        "Armor": 5,
+        "Weight": 4.5,
         "Melee Damage": 20,
         "Weak Spot Damage": 20
       },
       "Weak Festering Chestguard": {
+        "Armor": 4,
+        "Weight": 3,
         "Stamina Regeneration/s": 15
       },
       "Weak Layed Drowner's Carapace": {
+        "Armor": 3,
+        "Weight": 5,
         "Health": 15
       },
       "Veteran Bandit Armor": {
+        "Armor": 4,
+        "Weight": 3,
         "Stamina": 1
       },
       "Grief-torn Armor": {
+        "Armor": 2,
+        "Weight": 2.5,
         "Health": 5
       },
       "Chestplate of The Last Man": {
+        "Armor": 10,
+        "Weight": 7.9,
         "Melee Damage": 3
       },
       "Duel Knight Armor": {
+        "Armor": 9,
+        "Weight": 8,
         "Stamina": 10
       },
       "Assassin's Tunic": {
+        "Armor": 4,
+        "Weight": 1.4,
         "Sneak Damage": 10
       },
       "Ancient Knight's Breastplate": {
+        "Armor": 10,
+        "Weight": 7.9,
         "Stamina": 10
       },
-      "Fashionable Doublet": {
+      "Fashionable Doublet +4": {
+        "Armor": 7,
+        "Weight": 0.8,
         "Attack Speed": 10
       },
       "__Testing__ Cuirass": {
+        "Armor": 1000,
+        "Weight": 0.1,
         "Mana Regeneration/s": 10,
         "Stamina Regeneration/s": -10
       }
@@ -169,10 +223,12 @@
     "Effects": {
       "Naked": {},
       "Duel Knight Cape": {
+        "Weight": 4,
         "Stamina Regeneration/s": 25,
         "Critical Chance": 10
       },
       "__Testing__ Cape": {
+        "Weight": 0.1,
         "Critical Chance": 10,
         "Magic Critical Chance": -10,
         "Ranged Critical Chance": 10
@@ -190,15 +246,23 @@
     "Effects": {
       "Naked": {},
       "Assassin's Gloves": {
+        "Armor": 3,
+        "Weight": 0.3,
         "Sneak Damage": 5
       },
       "Duel Knight Gloves": {
+        "Armor": 5,
+        "Weight": 2.5,
         "Melee Damage": 20
       },
       "Knight's Gauntlets": {
+        "Armor": 4,
+        "Weight": 4.7,
         "Stamina": 7
       },
       "__Testing__ Gauntlets": {
+        "Armor": 1000,
+        "Weight": 0.1,
         "Critical Damage": 10,
         "Weak Spot Damage": -10
       }
@@ -225,51 +289,65 @@
     "Effects": {
       "Naked": {},
       "Archer's ring": {
+        "Weight": 0.1,
         "Ranged Damage": 15
       },
       "Athlete's pride": {
+        "Weight": 0.1,
         "Stamina": 5
       },
       "Fisherman's Seal": {
+        "Weight": 0.1,
         "Stamina": 3
       },
       "Kamelot's ring": {
+        "Weight": 0.1,
         "Health": 10,
         "Stamina": 5
       },
       "Lesser Health Ring": {
+        "Weight": 0.1,
         "Health": 5
       },
       "Lesser Mana Ring": {
+        "Weight": 0.1,
         "Mana": 10
       },
       "Oldsteel Ring": {
+        "Weight": 0.1,
         "Health": 3,
         "Stamina": 3
       },
       "Perilous Orb": {
+        "Weight": 0.1,
         "Critical Chance": 3
       },
       "Perilous Orb +2": {
+        "Weight": 0.1,
         "Critical Chance": 7
       },
       "Ring of Protection": {
+        "Weight": 0.1,
         "Armor": 1
       },
       "Ring of Toughness": {
+        "Weight": 0.1,
         "Encumbrance Limit": 25
       },
       "The perfect ring for a warrior": {
+        "Weight": 0.1,
         "Melee Damage": 5,
         "Ranged Damage": 5
       },
       "__Testing__ Ring": {
+        "Weight": 0.1,
         "Melee Damage": 10,
         "Spell Damage": -10,
         "Ranged Damage": 10,
         "Attack Speed": -10
       },
       "__Testing__ Ring 2": {
+        "Weight": 0.1,
         "Alchemy Bonus": 10,
         "Cooking Bonus": -10,
         "Handcrafting Bonus": 10,
@@ -291,15 +369,23 @@
     "Effects": {
       "Naked": {},
       "Assassin's Trousers": {
+        "Armor": 4,
+        "Weight": 1.2,
         "Sneak Damage": 5
       },
       "Duel Knight Trousers": {
+        "Armor": 4,
+        "Weight": 2.5,
         "Stamina": 5
       },
       "Knight's Greaves": {
+        "Armor": 4,
+        "Weight": 3.2,
         "Stamina": 7
       },
       "__Testing__ Greaves": {
+        "Armor": 1000,
+        "Weight": 0.1,
         "Sneak Damage": 10,
         "Noise": -10
       }
@@ -316,15 +402,23 @@
     "Effects": {
       "Naked": {},
       "Assassin's boots": {
+        "Armor": 3,
+        "Weight": 1,
         "Sneak Damage": 5
       },
       "Duel knight boots": {
+        "Armor": 4,
+        "Weight": 3,
         "Stamina": 5
       },
       "Knight's boots": {
+        "Armor": 5,
+        "Weight": 5,
         "Stamina": 5
       },
       "__Testing__ Boots": {
+        "Armor": 1000,
+        "Weight": 0.1,
         "Price of bought goods": 10,
         "Price of sold goods": -10
       }
